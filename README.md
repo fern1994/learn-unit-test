@@ -1,21 +1,34 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## คำสั่งต่างๆ
 
-In the project directory, you can run:
+- yarn test 
+คือ สั่งให้ทำการ test รอบเดียว
 
-### `npm start`
+- yarn test -u 
+คือ การสั่งให้ update snapshot ของเราเมื่อเราต้องการแก้ไข component นั้นๆ
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- yanr test -- --watch
+คือ การรัน test ซ้ำๆ เมื่อเรามีการแก้ไข test นั้นๆ จนกว่าจะออก q
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## ไฟล์เหล่านี้ใช้ทำอะไร
 
-### `npm test`
+- .babelrc
+ใช้ congif ให้ใช้ Jest กับ react ที่เป็น ES6 ได้
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- jest.config.json 
+ใช้อ้างอิง config enzyme Adapter จากไฟล์ setupTest.js เพื่อให้ใช้ enzyme ได้ ถ้าเราจะให้ใช้ config นี้ทุกไฟล์เราต้องตั้งค่าไว้ที่ package.jscon
+
+{
+  test: jest --config=jest.config.json
+}
+
+## package ตัวช่วย
+- jest ตัวหลักในการใช้ test
+- babel-preset-env และ babel-preset-react ทำให้ใช้ jest ร่วมกับ react ได้
+- enzyme ตัวช่วยในการ test แบบ DOM 
+- enzyme-adapter-react-16 ตัวช่วยให้ใช้ enzyme ได้ใน react^16
+- enzyme-to-json ช่วยแปลงไฟล์ snapshot ของเราจาก json เป็น html
 
 ### `npm run build`
 
