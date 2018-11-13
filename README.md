@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## คำสั่งต่างๆ
 
 - yarn test 
@@ -29,29 +27,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - enzyme ตัวช่วยในการ test แบบ DOM 
 - enzyme-adapter-react-16 ตัวช่วยให้ใช้ enzyme ได้ใน react^16
 - enzyme-to-json ช่วยแปลงไฟล์ snapshot ของเราจาก json เป็น html
+- transform-class-properties และ transform-object-rest-spread ใช้ config ใน babelrc ทำให้ไม่แจ้ง error arrow function เวลา test
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## function ต่างๆ
+- .tobe() ใช้เช็คค่าที่จะ Test ว่าจะต้องเป็น... ส่วนใหญ่จะเป็น string และ int
+- .toEqual() ใช้เช็คค่าว่าเท่า... ใช้ string int object 
+- .toMatchSnapShot() ทำ snapshot compoent (เป็นการอ่าน component ที่ทำเก็บ html และ ค่าต่างๆ อยู่ในรูปแบบ json อยากแปลงให้เป็น html ให้ใช้ enzyme-to-json)
+- .toHaveBeenLastCalledWith() ใช้ได้หลังจาก mock function แล้วเป็นการทดสอบการเรียกใช้ครั้งล่าสุด history.push เรา push ไปที่ / ครั่งล่าสุด
+- .toHaveBeenCalled() ใช้ได้หลังจาก mock function แล้ว เป็นการเช็คว่าจะเรีกใช้ function ที่เราคาดหวังไว้
